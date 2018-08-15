@@ -1,0 +1,26 @@
+<!--index.wxml-->
+
+<view class="menu">
+    <scroll-view scroll-x="true" class="top-nav" >
+        <view wx:for="{{dicData}}" wx:for-index="i" wx:key="id" data-id="{{itemTop.id}}" wx:for-item="itemTop" bindtap="tagChoose" class="{{currentItemId==itemTop.id?'top-btn top-hoverd-btn':'top-btn'}}">{{itemTop.name}}</view>
+    </scroll-view>
+</view>
+<view class="container">
+  
+  <view wx:for="{{videoList.length/2}}" wx:for-index="idx"  class="forth">
+
+        <view class="left" data-id="{{videoList[idx*2+0].id}}"  bindtap="videoChoose">
+          <image class="forth-img" mode="scaleToFill" src="{{videoList[idx*2+0].coverUrl}}"></image>
+          <text class="forth-text">{{videoList[idx*2+0].name}}</text>
+        </view>
+        <view class="right" data-id="{{videoList[idx*2+1].id}}" bindtap="videoChoose">
+          <image class="forth-img" mode="scaleToFill" src="{{videoList[idx*2+1].coverUrl}}"></image>
+          <text class="forth-text">{{videoList[idx*2+1].name}}</text>
+        </view>
+
+  </view>
+</view>
+
+
+
+ 
